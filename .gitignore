@@ -1,0 +1,10 @@
+.cpcache/
+.idea/
+.shadow-cljs/
+assets/
+node_modules/
+projectFilesBackup/
+target/
+
+/aws-transcribe-clj.iml
+/resources/public

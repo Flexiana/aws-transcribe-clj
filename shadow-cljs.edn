@@ -1,0 +1,16 @@
+{:deps   true
+ :nrepl  {:port 9009}
+ :builds {:app {:target          :browser
+                :output-dir      "resources/public/js"
+                :closure-defines {aws-transcribe-clj.config/APP-AUDIO-LIMIT              7000
+                                  aws-transcribe-clj.config/AWS-REGION                   "<region>"
+                                  aws-transcribe-clj.config/AWS-ROLE-ARN                 "<role-arn>"
+                                  aws-transcribe-clj.config/AWS-RECORDINGS-BUCKET        "<recordings>"
+                                  aws-transcribe-clj.config/AWS-TRANSCRIPTS-BUCKET       "<transcripts>"
+                                  aws-transcribe-clj.config/AWS-WEB-IDENTITY-PROVIDER-ID "graph.facebook.com"
+                                  aws-transcribe-clj.config/FB-APP-ID                    "<fb-app-id>"
+                                  aws-transcribe-clj.config/FB-SDK-VERSION               "<sdk-version>"}
+                :modules         {:app {:init-fn aws-transcribe-clj.core/init!}}
+                :devtools        {:preloads  [re-frisk.preload]
+                                  :http-root "resources/public"
+                                  :http-port 9000}}}}
